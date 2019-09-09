@@ -3,6 +3,12 @@ import { AppLoading } from 'expo';
 import { Container, Text } from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import Index from './Index'
+import reducers from './reducers'
+
+const store = createStore(reducers)
 
 export default class App extends React.Component {
   constructor(props) {
@@ -27,9 +33,9 @@ export default class App extends React.Component {
     }
 
     return (
-      <Container>
-        <Text>Open up App.js to start working on your app!</Text>
-      </Container>
+      <Provider store={store}>
+        <Index/>
+      </Provider>
     );
   }
 }

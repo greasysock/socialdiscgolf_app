@@ -1,11 +1,9 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation'
-import { createBottomTabNavigator } from 'react-navigation-tabs'
-import { createStackNavigator} from 'react-navigation-stack'
 
-import Courses from './components/course/CourseIndex'
+import CoursesScreen from './components/course/CoursesScreen'
 
 const AppTree = createSwitchNavigator({
-    Courses: {screen: Courses}
+    Courses: {screen: CoursesScreen}
 })
 
 const Navigator = createAppContainer(AppTree)

@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
 
 const renderRating = (rawRating) => {
     const rating = rawRating.toFixed(0)
-    console.log(rating)
     const ratingComponents = Array(rating)
     for(var i = 0; i < rating; i++){
         ratingComponents[i] = <Icon style={{color:'white'}} name="add-to-favorites-on" key={i}/>
@@ -44,7 +43,7 @@ const renderCourseRow = (course) => {
   </View>
     )
 }
-const CourseIndex = () => {
+const CoursesScreen = (props) => {
 
     const courses = useSelector(state=>state.courses)
     return (
@@ -55,4 +54,4 @@ const CourseIndex = () => {
     )
 }
 
-export default CourseIndex
+export default CoursesScreen

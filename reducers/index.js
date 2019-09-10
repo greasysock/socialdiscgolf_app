@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux'
+import CoursesReducer from './CoursesReducer'
 
 export default combineReducers({
-    nullReducer: ()=>{return []}
+    courses: CoursesReducer
 })

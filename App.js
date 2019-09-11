@@ -1,13 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { AppLoading } from 'expo';
-import { Provider } from 'react-redux'
-import { createStore } from 'redux'
-
-import reducers from './reducers'
 import Navigator from './Navigator'
-import {loadFonts} from './helpers/appHelpers'
-
-const store = createStore(reducers)
+import loadFonts from './concerns/appConcerns/loadFonts'
+import ReduxProvider from './concerns/appConcerns/ReduxProvider'
 
 console.disableYellowBox = true;
 
@@ -22,8 +17,8 @@ export default (props) => {
   }
 
   return (
-    <Provider store={store}>
+    <ReduxProvider>
         <Navigator/>
-    </Provider>
+    </ReduxProvider>
   )
 }
